@@ -21,7 +21,7 @@ public static void main(String[] args) throws IOException
 	
 	Scanner inputnumber1 = new Scanner(System.in);
 
-	String mainMenu = ("Kindly select the appropriate number as mentioned below to continue \n"+
+	String mainMenu = ("Kindly select the appropriate number as mentioned below to continue (Only enter integer values):\n"+
 	"1 : View current files list in the folder\n"+
 	"2 : File modifications in the folder \n" +
 	"3 : Close the application \n");
@@ -286,18 +286,17 @@ public static void main(String[] args) throws IOException
 		 	   			// in the given directory
 		 	   			// and whose names start with "12"
 		 	   			File[] files = f.listFiles(filter);
-
 		 	   			
-		 	   			
-		 	   			if(files == null) {
+		 	   			if (files.length==0) {
 		 	   				
-		 	   			System.out.println("File does not exist in the directory!");
+		 	   				System.out.println("Sorry! Could not find the mentioned file in the directory");
 		 	   			}
-		 	   			else {
+		 	   			else{
+
+		 	   			System.out.println("Files are:");
 
 		 	   			// Display the names of the files
 		 	   			for (int i = 0; i < files.length; i++) {
-		 	   			System.out.println("Files are:");
 		 	   				System.out.println(files[i].getName());
 		 	   						 	   			 
 		 	   			}}
